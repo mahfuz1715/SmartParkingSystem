@@ -4,11 +4,31 @@ import main.model.Ticket;
 import java.sql.*;
 import java.time.LocalDateTime;
 
+interface DatabaseConnection {
+    Connection getConnection() throws SQLException;
+}
+
+class DBConnection implements DatabaseConnection {
+    public static Connection getConnection() throws SQLException {
+        
+        return DriverManager.getConnection(null);
+    }
+}
+
 public class PaymentDao {
+
+    private DatabaseConnection dbConnection;
+
+    public PaymentDao(DatabaseConnection dbConnection) {
+        this.dbConnection = dbConnection;
+    }
+
+    public PaymentDao() {
+    }
 
     public boolean insertTicket(Ticket t) {
         String sql = "INSERT INTO tickets (vehicle_id, slot_id, entry_time) VALUES (?, ?, ?)";
-        try (Connection conn = DBConnection.getConnection();
+        try (Connection conn = dbConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, t.getVehicleId());
             ps.setInt(2, t.getSlotId());
@@ -23,7 +43,7 @@ public class PaymentDao {
 
     public boolean closeTicket(int ticketId, LocalDateTime exit, double charge) {
         String sql = "UPDATE tickets SET exit_time=?, total_charge=? WHERE id=?";
-        try (Connection conn = DBConnection.getConnection();
+        try (Connection conn = dbConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setTimestamp(1, Timestamp.valueOf(exit));
             ps.setDouble(2, charge);
