@@ -2,8 +2,7 @@ package main.service;
 
 import main.dao.PaymentDao;
 import main.model.Ticket;
-import java.time.Duration;
-import java.time.LocalDateTime;
+import main.util.Constants;
 
 public class PaymentService {
     private PaymentDao dao = new PaymentDao();
@@ -13,13 +12,7 @@ public class PaymentService {
     }
 
     public boolean closeTicket(Ticket t) {
-        double charge = calculateCharge(t.getEntryTime(), t.getExitTime());
+        double charge = t.calculateCharge(Constants.RATE_PER_HOUR);
         return dao.closeTicket(t.getId(), t.getExitTime(), charge);
-    }
-
-    public double calculateCharge(LocalDateTime in, LocalDateTime out) {
-        long hours = Duration.between(in, out).toHours();
-        if (hours == 0) hours = 1;
-        return hours * 10.0; 
     }
 }

@@ -1,5 +1,6 @@
 package main.model;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 
 public class Ticket {
@@ -15,6 +16,14 @@ public class Ticket {
         this.vehicleId = vehicleId;
         this.slotId = slotId;
         this.entryTime = entryTime;
+    }
+
+    public double calculateCharge(double ratePerHour) {
+        if (entryTime == null || exitTime == null) return 0.0;
+        long hours = Duration.between(entryTime, exitTime).toHours();
+        if (hours == 0) hours = 1;
+        this.totalCharge = hours * ratePerHour;
+        return this.totalCharge;
     }
 
     public int getId() { return id; }

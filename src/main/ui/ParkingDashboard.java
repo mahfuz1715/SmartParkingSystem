@@ -6,14 +6,13 @@ import main.model.User;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.util.List;
 
 public class ParkingDashboard extends JFrame {
     private ParkingController controller = new ParkingController();
     private JTable table;
     private JButton refreshButton, parkButton, releaseButton;
-    private User currentUser;
+    public User currentUser;
 
     public ParkingDashboard(User u) {
         this.currentUser = u;
@@ -33,7 +32,7 @@ public class ParkingDashboard extends JFrame {
         topPanel.add(releaseButton);
         add(topPanel, BorderLayout.NORTH);
 
-        String[] columns = {"ID", "Slot No", "Type", "Status"};
+        String[] columns = { "ID", "Slot No", "Type", "Status" };
         Object[][] data = {};
         table = new JTable(data, columns);
         add(new JScrollPane(table), BorderLayout.CENTER);
@@ -55,7 +54,7 @@ public class ParkingDashboard extends JFrame {
             data[i][2] = s.getType();
             data[i][3] = s.getStatus();
         }
-        String[] columns = {"ID", "Slot No", "Type", "Status"};
+        String[] columns = { "ID", "Slot No", "Type", "Status" };
         table.setModel(new javax.swing.table.DefaultTableModel(data, columns));
     }
 
@@ -83,5 +82,10 @@ public class ParkingDashboard extends JFrame {
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "Invalid slot ID.");
         }
+    }
+
+    public void setManagementActionsVisible(boolean visible) {
+        parkButton.setVisible(visible);
+        releaseButton.setVisible(visible);
     }
 }

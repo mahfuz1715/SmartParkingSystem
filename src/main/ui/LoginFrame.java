@@ -5,23 +5,16 @@ import main.model.User;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.File; 
 
 class BackgroundPanel extends JPanel {
     private Image backgroundImage;
-    private float imageOpacity = 0.5f; 
 
     public BackgroundPanel(String imagePath) {
         try {
-            
             ImageIcon icon = new ImageIcon(imagePath);
             backgroundImage = icon.getImage();
         } catch (Exception e) {
             System.err.println("Error loading background image: " + imagePath);
-            e.printStackTrace();
-            
             backgroundImage = null;
         }
     }
@@ -31,15 +24,11 @@ class BackgroundPanel extends JPanel {
         super.paintComponent(g);
         if (backgroundImage != null) {
             Graphics2D g2d = (Graphics2D) g.create();
-            
             g2d.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
-            
             g2d.setColor(new Color(0, 0, 0, 100)); 
             g2d.fillRect(0, 0, getWidth(), getHeight());
-            
             g2d.dispose();
         } else {
-            
             g.setColor(new Color(50, 50, 70));
             g.fillRect(0, 0, getWidth(), getHeight());
         }
@@ -54,14 +43,11 @@ public class LoginFrame extends JFrame {
 
     private static final Color PRIMARY_COLOR = new Color(50, 150, 250); 
     private static final Color ACCENT_COLOR = new Color(255, 100, 100);  
-    
     private static final Color CARD_BACKGROUND = new Color(255, 255, 255, 230); 
-
     private static final String BACKGROUND_IMAGE_PATH = "parking_background.jpg"; 
 
     public LoginFrame() {
         setTitle("Smart Parking System - Login");
-        
         setSize(800, 600); 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -70,7 +56,13 @@ public class LoginFrame extends JFrame {
         backgroundPanel.setLayout(new BorderLayout());
         setContentPane(backgroundPanel);
         
+        setupUI(backgroundPanel);
+        setVisible(true); 
+    }
+
+    private void setupUI(BackgroundPanel backgroundPanel) {
         JPanel headerPanel = new JPanel();
+        headerPanel.setOpaque(false); 
         headerPanel.setBackground(new Color(50, 150, 250, 200)); 
         headerPanel.setBorder(new EmptyBorder(25, 0, 25, 0));
         JLabel titleLabel = new JLabel("SMART PARKING SYSTEM");
@@ -81,7 +73,6 @@ public class LoginFrame extends JFrame {
 
         JPanel loginPanel = new JPanel(new GridBagLayout());
         loginPanel.setBackground(CARD_BACKGROUND); 
-        
         loginPanel.setBorder(BorderFactory.createCompoundBorder(
             BorderFactory.createLineBorder(new Color(200, 200, 200, 150), 1), 
             new EmptyBorder(40, 40, 40, 40) 
@@ -90,79 +81,63 @@ public class LoginFrame extends JFrame {
         JPanel centerContainer = new JPanel(new GridBagLayout());
         centerContainer.setOpaque(false); 
         centerContainer.add(loginPanel); 
-
         backgroundPanel.add(centerContainer, BorderLayout.CENTER); 
         
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 5, 10, 5);
         gbc.fill = GridBagConstraints.HORIZONTAL;
         
-        gbc.gridx = 0; gbc.gridy = 0; gbc.weightx = 0;
-        JLabel userLabel = new JLabel("Username:");
-        userLabel.setFont(new Font("Segoe UI", Font.PLAIN, 16));
-        loginPanel.add(userLabel, gbc);
-
-        gbc.gridx = 1; gbc.gridy = 0; gbc.weightx = 1.0;
+        gbc.gridx = 0; gbc.gridy = 0;
+        loginPanel.add(new JLabel("Username:"), gbc);
+        gbc.gridx = 1; 
         usernameField = new JTextField(20);
-        usernameField.setFont(new Font("Segoe UI", Font.PLAIN, 16));
-        usernameField.setBorder(BorderFactory.createCompoundBorder(
-            BorderFactory.createLineBorder(new Color(180, 180, 180)), 
-            new EmptyBorder(8, 10, 8, 10) 
-        ));
+        applyFieldStyle(usernameField); 
         loginPanel.add(usernameField, gbc);
 
-        gbc.gridx = 0; gbc.gridy = 1; gbc.weightx = 0;
-        JLabel passLabel = new JLabel("Password:");
-        passLabel.setFont(new Font("Segoe UI", Font.PLAIN, 16));
-        loginPanel.add(passLabel, gbc);
-
-        gbc.gridx = 1; gbc.gridy = 1; gbc.weightx = 1.0;
+        gbc.gridx = 0; gbc.gridy = 1;
+        loginPanel.add(new JLabel("Password:"), gbc);
+        gbc.gridx = 1;
         passwordField = new JPasswordField(20);
-        passwordField.setFont(new Font("Segoe UI", Font.PLAIN, 16));
-        passwordField.setBorder(BorderFactory.createCompoundBorder(
+        applyFieldStyle(passwordField); 
+        loginPanel.add(passwordField, gbc);
+
+        setupButtons(loginPanel, gbc);
+    }
+
+    private void applyFieldStyle(JTextField field) {
+        field.setFont(new Font("Segoe UI", Font.PLAIN, 16));
+        field.setBorder(BorderFactory.createCompoundBorder(
             BorderFactory.createLineBorder(new Color(180, 180, 180)), 
             new EmptyBorder(8, 10, 8, 10) 
         ));
-        loginPanel.add(passwordField, gbc);
+    }
 
+    private void setupButtons(JPanel loginPanel, GridBagConstraints gbc) {
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 0));
         buttonPanel.setOpaque(false); 
 
-        loginButton = new JButton("Login");
-        loginButton.setFont(new Font("Segoe UI", Font.BOLD, 16));
-        loginButton.setBackground(PRIMARY_COLOR);
-        loginButton.setForeground(Color.WHITE);
-        loginButton.setFocusPainted(false);
-        loginButton.setPreferredSize(new Dimension(120, 40)); 
-        
-        registerButton = new JButton("Register");
-        registerButton.setFont(new Font("Segoe UI", Font.BOLD, 16));
-        registerButton.setBackground(ACCENT_COLOR);
-        registerButton.setForeground(Color.WHITE);
-        registerButton.setFocusPainted(false);
-        registerButton.setPreferredSize(new Dimension(120, 40)); 
+        loginButton = createStyledButton("Login", PRIMARY_COLOR);
+        registerButton = createStyledButton("Register", ACCENT_COLOR);
 
         buttonPanel.add(loginButton);
         buttonPanel.add(registerButton);
 
-        gbc.gridx = 0; gbc.gridy = 2;
-        gbc.gridwidth = 2; 
+        gbc.gridx = 0; gbc.gridy = 2; gbc.gridwidth = 2; 
         gbc.insets = new Insets(40, 5, 10, 5); 
         loginPanel.add(buttonPanel, gbc);
         
-        loginButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                handleLogin();
-            }
-        });
+        loginButton.addActionListener(e -> handleLogin());
+        registerButton.addActionListener(e -> handleRegister());
+    }
 
-        registerButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                handleRegister();
-            }
-        });
-        
-        setVisible(true); 
+    private JButton createStyledButton(String text, Color bg) {
+        JButton btn = new JButton(text);
+        btn.setFont(new Font("Segoe UI", Font.BOLD, 16));
+        btn.setBackground(bg);
+        btn.setForeground(Color.WHITE);
+        btn.setFocusPainted(false);
+        btn.setPreferredSize(new Dimension(120, 40));
+        return btn;
     }
 
     private void handleLogin() {
@@ -170,15 +145,14 @@ public class LoginFrame extends JFrame {
         String pass = new String(passwordField.getPassword());
         
         if (user.isEmpty() || pass.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Username and Password cannot be empty.", "Input Error", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Fields cannot be empty.", "Input Error", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
         User u = controller.login(user, pass);
         if (u != null) {
-            JOptionPane.showMessageDialog(this, "Login successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Login successful!");
             dispose();
-
             new ParkingDashboard(u).setVisible(true); 
         } else {
             JOptionPane.showMessageDialog(this, "Invalid credentials", "Error", JOptionPane.ERROR_MESSAGE);
@@ -190,14 +164,14 @@ public class LoginFrame extends JFrame {
         String pass = new String(passwordField.getPassword());
 
         if (user.isEmpty() || pass.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Username and Password cannot be empty.", "Input Error", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Fields cannot be empty.", "Input Error", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
         if (controller.register(user, pass, "user")) {
             JOptionPane.showMessageDialog(this, "Registered successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(this, "Registration failed! User may already exist.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Registration failed!", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 }

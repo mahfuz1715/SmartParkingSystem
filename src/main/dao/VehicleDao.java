@@ -1,28 +1,32 @@
 package main.dao;
-
 import main.model.Vehicle;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional; 
+import java.util.Optional;
 
 public class VehicleDao {
-    private static List<Vehicle> vehicleStore = new ArrayList<>();
-    private static int nextId = 1; 
-
-    static {
-        vehicleStore.add(new Vehicle(nextId++, "ABC1234", "Compact", 1));
-        vehicleStore.add(new Vehicle(nextId++, "XYZ9876", "Large", 2));
-    }
-
-
     public boolean createVehicle(Vehicle vehicle) {
-        if (vehicle.getId() == 0) {
-            vehicle.setId(nextId++);
+        
+        String sql = "INSERT INTO vehicles (number, type, user_id) VALUES (?, ?, ?)";
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+            ps.setString(1, vehicle.getNumber());
+            ps.setString(2, vehicle.getType());
+            ps.setInt(3, vehicle.getUserId());
+            int rowsAffected = ps.executeUpdate();
+
+            if (rowsAffected > 0) {
+                
+                ResultSet rs = ps.getGeneratedKeys();
+                if (rs.next()) {
+                    vehicle.setId(rs.getInt(1));
+                }
+                return true;
+            }
+            return false;
+        } catch (SQLException e) {
+            System.out.println("Error inserting vehicle: " + e.getMessage());
+            return false;
         }
-        vehicleStore.add(vehicle);
-        System.out.println("Vehicle created in-memory: " + vehicle);
-        return true;
     }
 
     public Optional<Vehicle> getVehicleById(int id) {
@@ -42,7 +46,6 @@ public class VehicleDao {
         } catch (SQLException e) {
             System.out.println("Error fetching vehicle: " + e.getMessage());
         }
-
-        return vehicleStore.stream().filter(v -> v.getId() == id).findFirst();
+        return Optional.empty(); // Returns an empty Optional if not found in DB
     }
 }
