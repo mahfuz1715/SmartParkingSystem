@@ -100,3 +100,53 @@ We don't have any unnecessary comments in any of our project files.
 10. Alternative Class with Different Inteface:
 
 We also think we don't have this type of code smells in our project.
+
+Lab Task 3: Design Pattern (Commit no-3)
+
+Singleton Pattern: We applied Singleton creational design pattern in DBConnection.java file. 
+Because A database 
+connection is a shared resource. Creating multiple instances of a connection manager is 
+wasteful and can lead to resource leaks. The Singleton Pattern ensures that only one instance 
+of the DBConnection exists throughout the application's lifecycle, providing a single global 
+point of access.
+
+Observer Pattern: We applied Observer pattern in ParkingDashboard.java file. 
+Explanation: Why Observer?
+The Observer Pattern defines a one-to-many dependency between objects so that when one object 
+(the Subject) changes state, all its dependents (the Observers) are notified and updated 
+automatically.
+In our ParkingDashboard file, the relationship between the refreshButton and its 
+ActionListener precisely matches this pattern.
+Role in Pattern:
+The object that maintains a list of dependents and notifies them of state changes.
+In our code example:
+The refreshButton (JButton object). It holds a list of ActionListener objects that want to 
+know when it is clicked.
+
+Proxy Pattern: We applied Proxy pattern in ParkingService.java file. 
+Why this Pattern?
+Justification: The Proxy Pattern provides a placeholder or "wrapper" for another object to 
+control access to it. By using a Proxy for ParkingService, we can add a security or 
+validation layer (e.g., checking if the database is busy or if the user is authorized) 
+without changing the core logic of the original service.
+
+Builder Pattern:
+We applied builder pattern in Ticket.java file.
+Why this Pattern?
+Justification: The Builder Pattern is used to construct complex objects step-by-step. It is 
+particularly appropriate here because a Ticket is created with only an entryTime and 
+vehicleId, but later it gets an exitTime and a totalAmount. The Builder allows us to create 
+the object flexibly without having multiple confusing constructors.
+
+Strategy Pattern:
+We applied strategy pattern in PaymentService.java.
+Why this Pattern?
+Justification: The Strategy Pattern is used to define a family of algorithms, encapsulate 
+each one, and make them interchangeable. In a parking system, different vehicles (Bike vs. 
+Car) or different times (Weekend vs. Weekday) have different pricing rules. Using Strategy 
+allows us to switch these rules at runtime without changing the PaymentService class.
+
+Decorator Pattern:
+We applied decorator pattern in ParkingSlot.java file.
+For future improvements or extra feature, the Decorator Pattern allows us to "wrap" a basic 
+slot with extra features dynamically. This keeps our class structure lean and flexible.

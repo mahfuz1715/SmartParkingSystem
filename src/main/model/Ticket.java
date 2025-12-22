@@ -11,11 +11,29 @@ public class Ticket {
     private LocalDateTime exitTime;
     private double totalCharge;
 
-    public Ticket() {}
-    public Ticket(int vehicleId, int slotId, LocalDateTime entryTime) {
-        this.vehicleId = vehicleId;
-        this.slotId = slotId;
-        this.entryTime = entryTime;
+    private Ticket(Builder builder) {
+        this.vehicleId = builder.vehicleId;
+        this.slotId = builder.slotId;
+        this.entryTime = builder.entryTime;
+        this.exitTime = builder.exitTime;
+    }
+
+    public Ticket(int vehicleId2, int id2, LocalDateTime now) {
+    }
+
+    public static class Builder {
+        private int vehicleId;
+        private int slotId;
+        private LocalDateTime entryTime;
+        private LocalDateTime exitTime;
+
+        public Builder setVehicleId(int id) { this.vehicleId = id; return this; }
+        public Builder setSlotId(int id) { this.slotId = id; return this; }
+        public Builder setEntryTime(LocalDateTime time) { this.entryTime = time; return this; }
+        
+        public Ticket build() {
+            return new Ticket(this);
+        }
     }
 
     public double calculateCharge(double ratePerHour) {

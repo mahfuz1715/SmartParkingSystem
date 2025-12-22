@@ -9,7 +9,7 @@ interface DatabaseConnection {
 }
 
 class DBConnection implements DatabaseConnection {
-    public static Connection getConnection() throws SQLException {
+    public Connection getConnection() throws SQLException {
         
         return DriverManager.getConnection(null);
     }

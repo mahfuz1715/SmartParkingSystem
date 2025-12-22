@@ -29,7 +29,7 @@ public class ParkingDao {
         return list;
     }
 
-    public boolean updateSlotStatus(int slotId, String status, Integer vehicleId) {
+    public boolean updateSlotStatus(int slotId, Integer vehicleId, String status) {
         String sql = "UPDATE slots SET status=?, vehicle_id=? WHERE id=?";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {

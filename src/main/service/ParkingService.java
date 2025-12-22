@@ -1,25 +1,52 @@
 package main.service;
 
-import main.dao.ParkingDao;
-import main.model.ParkingSlot;
 import java.util.List;
 
-public class ParkingService {
-    private ParkingDao dao = new ParkingDao();
+import main.dao.ParkingDao;
+import main.model.ParkingSlot;
+
+// Define an interface for the Service
+interface IParkingService {
+    boolean occupySlot(int slotId, int vehicleId);
+}
+
+// The Real Service
+public class ParkingService implements IParkingService {
+    public boolean occupySlot(int slotId, int vehicleId) {
+        // Core Logic
+        return new ParkingDao().updateSlotStatus(slotId, vehicleId, "OCCUPIED");
+    }
 
     public List<ParkingSlot> viewSlots() {
-        return dao.getAllSlots();
-    }
-
-    public boolean occupySlot(int slotId, int vehicleId) {
-        return dao.updateSlotStatus(slotId, "occupied", vehicleId);
-    }
-
-    public boolean releaseSlot(int slotId) {
-        return dao.updateSlotStatus(slotId, "available", null);
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'viewSlots'");
     }
 
     public ParkingSlot getFreeSlot(String type) {
-        return dao.getAvailableSlotByType(type);
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getFreeSlot'");
+    }
+
+    public boolean releaseSlot(int slotId) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'releaseSlot'");
+    }
+}
+
+// The Proxy Service (New)
+class ParkingServiceProxy implements IParkingService {
+    private ParkingService realService = new ParkingService();
+    private String userRole;
+
+    public ParkingServiceProxy(String role) { this.userRole = role; }
+
+    @Override
+    public boolean occupySlot(int slotId, int vehicleId) {
+        // Access Control Logic
+        if ("ADMIN".equals(userRole) || "USER".equals(userRole)) {
+            return realService.occupySlot(slotId, vehicleId);
+        }
+        System.out.println("Access Denied: You don't have permission to park.");
+        return false;
     }
 }

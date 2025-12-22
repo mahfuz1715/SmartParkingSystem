@@ -9,12 +9,21 @@ public class DBConnection {
     private static final String USER = "root";
     private static final String PASSWORD = "1234";
 
+    private static DBConnection instance;
+
+    private DBConnection() {}
+
+    public static synchronized DBConnection getInstance() {
+        if (instance == null) {
+            instance = new DBConnection();
+        }
+        return instance;
+    }
+
     public static Connection getConnection() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
             return DriverManager.getConnection(URL, USER, PASSWORD);
-        } catch (SQLException | ClassNotFoundException e) {
-            System.out.println("Database connection failed: " + e.getMessage());
+        } catch (SQLException e) {
             return null;
         }
     }
