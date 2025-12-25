@@ -1,0 +1,85 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" version="29.2.9">
+  <diagram name="Page-1" id="dNiXzqlMLDyPfydPsua8">
+    <mxGraphModel dx="1042" dy="527" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2sWDp5k-dvUe318GbNwp-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;fontColor=#000000;fontSize=14;fontStyle=1" value="Target System:&#xa;Smart Parking System" vertex="1">
+          <mxGeometry height="120" width="240" x="325" y="356" as="geometry" />
+        </mxCell>
+        <mxCell id="2sWDp5k-dvUe318GbNwp-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;fontColor=#000000;fontSize=12;" value="User (Driver)" vertex="1">
+          <mxGeometry height="60" width="120" x="85" y="336" as="geometry" />
+        </mxCell>
+        <mxCell id="2sWDp5k-dvUe318GbNwp-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;fontColor=#000000;fontSize=12;" value="Admin" vertex="1">
+          <mxGeometry height="60" width="120" x="85" y="436" as="geometry" />
+        </mxCell>
+        <mxCell id="2sWDp5k-dvUe318GbNwp-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;fontColor=#000000;fontSize=12;" value="Database System&#xa;(MySQL)" vertex="1">
+          <mxGeometry height="60" width="140" x="285" y="556" as="geometry" />
+        </mxCell>
+        <mxCell id="2sWDp5k-dvUe318GbNwp-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;fontColor=#000000;fontSize=12;" value="Parking Sensors&#xa;(Simulated/Real)" vertex="1">
+          <mxGeometry height="60" width="140" x="465" y="556" as="geometry" />
+        </mxCell>
+        <mxCell id="2sWDp5k-dvUe318GbNwp-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;fontColor=#000000;fontSize=12;" value="Payment Gateway" vertex="1">
+          <mxGeometry height="60" width="140" x="645" y="386" as="geometry" />
+        </mxCell>
+        <mxCell id="2sWDp5k-dvUe318GbNwp-7" edge="1" parent="1" source="2sWDp5k-dvUe318GbNwp-2" style="endArrow=classic;html=1;fontSize=11;fontColor=#000000;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="2sWDp5k-dvUe318GbNwp-1" value="Uses">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2sWDp5k-dvUe318GbNwp-8" edge="1" parent="1" source="2sWDp5k-dvUe318GbNwp-3" style="endArrow=classic;html=1;fontSize=11;fontColor=#000000;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="2sWDp5k-dvUe318GbNwp-1" value="Uses">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2sWDp5k-dvUe318GbNwp-9" edge="1" parent="1" source="2sWDp5k-dvUe318GbNwp-1" style="endArrow=classic;html=1;fontSize=11;fontColor=#000000;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" target="2sWDp5k-dvUe318GbNwp-4" value="Depends on">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2sWDp5k-dvUe318GbNwp-10" edge="1" parent="1" source="2sWDp5k-dvUe318GbNwp-1" style="endArrow=classic;startArrow=classic;html=1;fontSize=11;fontColor=#000000;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" target="2sWDp5k-dvUe318GbNwp-5" value="Uses">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2sWDp5k-dvUe318GbNwp-11" edge="1" parent="1" source="2sWDp5k-dvUe318GbNwp-1" style="endArrow=classic;startArrow=classic;html=1;fontSize=11;fontColor=#000000;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="2sWDp5k-dvUe318GbNwp-6" value="Interacts with">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2sWDp5k-dvUe318GbNwp-12" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" value="Actors" vertex="1">
+          <mxGeometry height="30" width="60" x="115" y="506" as="geometry" />
+        </mxCell>
+        <mxCell id="2sWDp5k-dvUe318GbNwp-13" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" value="Subordinate systems" vertex="1">
+          <mxGeometry height="30" width="140" x="375" y="626" as="geometry" />
+        </mxCell>
+        <mxCell id="2sWDp5k-dvUe318GbNwp-14" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" value="Peers" vertex="1">
+          <mxGeometry height="30" width="60" x="685" y="456" as="geometry" />
+        </mxCell>
+        <mxCell id="2sWDp5k-dvUe318GbNwp-15" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" value="Superordinate systems" vertex="1">
+          <mxGeometry height="30" width="140" x="367" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="2sWDp5k-dvUe318GbNwp-54" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;fontColor=#000000;fontSize=12;" value="Smart City Management Platform" vertex="1">
+          <mxGeometry height="60" width="140" x="280" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="2sWDp5k-dvUe318GbNwp-55" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;fontColor=#000000;fontSize=12;" value="Municipal Traffic Control System" vertex="1">
+          <mxGeometry height="60" width="140" x="480" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="2sWDp5k-dvUe318GbNwp-56" edge="1" parent="1" source="2sWDp5k-dvUe318GbNwp-54" style="endArrow=classic;html=1;fontSize=11;fontColor=#000000;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.429;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" target="2sWDp5k-dvUe318GbNwp-1" value="Used by">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="340" y="310" as="sourcePoint" />
+            <mxPoint x="460" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2sWDp5k-dvUe318GbNwp-57" edge="1" parent="1" source="2sWDp5k-dvUe318GbNwp-55" style="endArrow=classic;html=1;fontSize=11;fontColor=#000000;entryX=0.75;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="2sWDp5k-dvUe318GbNwp-1" value="Used by">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="620" y="300" as="sourcePoint" />
+            <mxPoint x="665" y="376" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
