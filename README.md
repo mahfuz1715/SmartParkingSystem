@@ -1,4 +1,4 @@
-Lab Task 1: Solid Principle
+Lab Task 1: Solid Principle (Commit no-1)
 
 1. Single Responsibility Principle:
 
@@ -33,11 +33,7 @@ directly relevant.
 In the "PaymentDaon" class DIP violated because low level module depends on high level
 modules in the class. So we created an interface to solve the Dependency Inversion Principle.
 
-
-
-
-
-Lab Task 2: Code smells:
+Lab Task 2: Code smells (Commit no-2)
 
 1. Dead Code:
 
@@ -105,10 +101,6 @@ We don't have any unnecessary comments in any of our project files.
 
 We also think we don't have this type of code smells in our project.
 
-
-
-
-
 Lab Task 3: Design Pattern (Commit no-3)
 
 Singleton Pattern: We applied Singleton creational design pattern in DBConnection.java file. 
@@ -159,11 +151,7 @@ We applied decorator pattern in ParkingSlot.java file.
 For future improvements or extra feature, the Decorator Pattern allows us to "wrap" a basic 
 slot with extra features dynamically. This keeps our class structure lean and flexible.
 
-
-
-
-
-Lab Task 4 – Architectural Design
+Lab Task 4: Architectural Design (Commit no-4)
 
 1. Introduction
 
