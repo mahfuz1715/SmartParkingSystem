@@ -1,0 +1,125 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" version="29.2.9">
+  <diagram name="Diagram-1 ACD - Smart Parking System" id="dNiXzqlMLDyPfydPsua8">
+    <mxGraphModel dx="1892" dy="527" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="scGZKSW1NndANT0SZKf5-32" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;fontStyle=1" value="Target System:&#xa;Smart Parking System" vertex="1">
+          <mxGeometry height="120" width="260" x="-607" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-33" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;" value="Smart City&#xa;Management Platform" vertex="1">
+          <mxGeometry height="60" width="200" x="-577" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;" value="User (Driver)" vertex="1">
+          <mxGeometry height="55" width="140" x="-840" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-35" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;" value="Admin" vertex="1">
+          <mxGeometry height="55" width="140" x="-840" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-36" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;" value="Parking Operator&#xa;(On-site Staff)" vertex="1">
+          <mxGeometry height="55" width="140" x="-840" y="495" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-37" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;" value="Security / Authority" vertex="1">
+          <mxGeometry height="55" width="140" x="-840" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-38" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;" value="Database System&#xa;(MySQL)" vertex="1">
+          <mxGeometry height="55" width="140" x="-670" y="555" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-39" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;" value="Parking Sensors" vertex="1">
+          <mxGeometry height="60" width="150" x="-371" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-40" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;" value="Payment Gateway" vertex="1">
+          <mxGeometry height="55" width="160" x="-197" y="375" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-41" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;" value="Entry/Exit Gate Barrier&#xa;(Boom Gate)" vertex="1">
+          <mxGeometry height="65" width="170" x="-451" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-42" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;" value="ANPR / Camera System&#xa;(Plate Detection)" vertex="1">
+          <mxGeometry height="65" width="190" x="-677" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-43" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;" value="Receipt / Ticket Printer" vertex="1">
+          <mxGeometry height="55" width="180" x="-537" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-44" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;" value="Notification Service&#xa;(SMS/Email)" vertex="1">
+          <mxGeometry height="60" width="160" x="-197" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-45" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;" value="Authentication / User Store&#xa;(Login/Role)" vertex="1">
+          <mxGeometry height="60" width="200" x="-242" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-46" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;" value="Reporting &amp; Analytics&#xa;(Usage, Revenue)" vertex="1">
+          <mxGeometry height="60" width="190" x="-197" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-47" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;dashed=1" value="Mobile App (Future)&#xa;(Booking / Status)" vertex="1">
+          <mxGeometry height="60" width="170" x="-800" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-48" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;dashed=1" value="Web Portal (Future)&#xa;(Admin/Reports)" vertex="1">
+          <mxGeometry height="60" width="170" x="-800" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-49" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1" value="Superordinate systems" vertex="1">
+          <mxGeometry height="30" width="170" x="-562" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-50" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1" value="Actors" vertex="1">
+          <mxGeometry height="30" width="120" x="-830" y="305" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-51" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1" value="Subordinate / Dependent systems" vertex="1">
+          <mxGeometry height="30" width="310" x="-602" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-52" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1" value="Peers / External services" vertex="1">
+          <mxGeometry height="30" width="220" x="-312" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-53" edge="1" parent="1" source="scGZKSW1NndANT0SZKf5-33" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="scGZKSW1NndANT0SZKf5-32" value="Used by">
+          <mxGeometry relative="1" x="-0.1" y="20" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-54" edge="1" parent="1" source="scGZKSW1NndANT0SZKf5-32" style="endArrow=classic;startArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="scGZKSW1NndANT0SZKf5-40" value="Uses">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-55" edge="1" parent="1" source="scGZKSW1NndANT0SZKf5-32" style="endArrow=classic;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="scGZKSW1NndANT0SZKf5-38" value="Depends on">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-56" edge="1" parent="1" source="scGZKSW1NndANT0SZKf5-34" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="scGZKSW1NndANT0SZKf5-32" value="Uses">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-57" edge="1" parent="1" source="scGZKSW1NndANT0SZKf5-35" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.75;" target="scGZKSW1NndANT0SZKf5-32" value="Admin controls">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-58" edge="1" parent="1" source="scGZKSW1NndANT0SZKf5-36" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.95;" target="scGZKSW1NndANT0SZKf5-32" value="Operates / monitors">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-59" edge="1" parent="1" source="scGZKSW1NndANT0SZKf5-32" style="endArrow=classic;html=1;exitX=0.072;exitY=1.013;entryX=1;entryY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryDx=0;entryDy=0;" target="scGZKSW1NndANT0SZKf5-37" value="Alerts / incidents">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-60" edge="1" parent="1" source="scGZKSW1NndANT0SZKf5-32" style="endArrow=classic;html=1;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" target="scGZKSW1NndANT0SZKf5-39" value="Reads sensor status">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-61" edge="1" parent="1" source="scGZKSW1NndANT0SZKf5-32" style="endArrow=classic;html=1;exitX=0.65;exitY=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="scGZKSW1NndANT0SZKf5-41" value="Controls gate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-62" edge="1" parent="1" source="scGZKSW1NndANT0SZKf5-32" style="endArrow=classic;html=1;exitX=0.35;exitY=1;entryX=0.834;entryY=-0.049;entryDx=0;entryDy=0;entryPerimeter=0;" target="scGZKSW1NndANT0SZKf5-42" value="Vehicle entry/exit evidence">
+          <mxGeometry relative="1" x="-0.236" y="6" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-63" edge="1" parent="1" source="scGZKSW1NndANT0SZKf5-32" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.387;entryY=-0.029;entryDx=0;entryDy=0;entryPerimeter=0;" target="scGZKSW1NndANT0SZKf5-43" value="Ticket/Receipt output">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-64" edge="1" parent="1" source="scGZKSW1NndANT0SZKf5-32" style="endArrow=classic;startArrow=classic;html=1;exitX=1;exitY=0.35;entryX=0;entryY=0.5;" target="scGZKSW1NndANT0SZKf5-45" value="Authenticate / authorize">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-65" edge="1" parent="1" source="scGZKSW1NndANT0SZKf5-32" style="endArrow=classic;startArrow=classic;html=1;exitX=1;exitY=0.65;entryX=0;entryY=0.5;" target="scGZKSW1NndANT0SZKf5-44" value="Notify user/admin">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-66" edge="1" parent="1" source="scGZKSW1NndANT0SZKf5-32" style="endArrow=classic;html=1;exitX=1;exitY=0.85;entryX=0;entryY=0.5;" target="scGZKSW1NndANT0SZKf5-46" value="Send reports">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-67" edge="1" parent="1" source="scGZKSW1NndANT0SZKf5-47" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0.198;entryY=-0.007;entryDx=0;entryDy=0;entryPerimeter=0;" target="scGZKSW1NndANT0SZKf5-32" value="Future channel">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="scGZKSW1NndANT0SZKf5-68" edge="1" parent="1" source="scGZKSW1NndANT0SZKf5-48" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" target="scGZKSW1NndANT0SZKf5-32" value="Future channel">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
