@@ -33,6 +33,10 @@ directly relevant.
 In the "PaymentDaon" class DIP violated because low level module depends on high level
 modules in the class. So we created an interface to solve the Dependency Inversion Principle.
 
+
+
+
+
 Lab Task 2: Code smells:
 
 1. Dead Code:
@@ -101,6 +105,10 @@ We don't have any unnecessary comments in any of our project files.
 
 We also think we don't have this type of code smells in our project.
 
+
+
+
+
 Lab Task 3: Design Pattern (Commit no-3)
 
 Singleton Pattern: We applied Singleton creational design pattern in DBConnection.java file. 
@@ -150,3 +158,167 @@ Decorator Pattern:
 We applied decorator pattern in ParkingSlot.java file.
 For future improvements or extra feature, the Decorator Pattern allows us to "wrap" a basic 
 slot with extra features dynamically. This keeps our class structure lean and flexible.
+
+
+
+
+
+Lab Task 4 – Architectural Design
+
+1. Introduction
+
+This lab task focuses on designing the initial software architecture of the selected project, 
+Smart Parking System. The goal is not to implement new functionality, but to analyze the 
+existing system and represent it using standard architectural design techniques discussed in 
+class.
+
+The architectural design was carried out step by step, starting from a high-level system view 
+and gradually refining it into detailed components. Finally, the system was designed using 
+appropriate architectural patterns, with proper justification for each choice.
+
+2. Architectural Context Diagram (ACD)
+
+The Architectural Context Diagram (ACD) presents a high-level view of the Smart Parking 
+System and shows how it interacts with external entities.
+
+What was done:
+
+Identified the Smart Parking System as the target system.
+
+Identified external entities such as:
+
+Users (Drivers)
+
+Admin
+
+Database (MySQL)
+
+External services (e.g., Payment Gateway, future sensors)
+
+Defined the relationships such as uses, depends on, and interacts with.
+
+Purpose and justification:
+
+The ACD clearly defines the system boundary.
+
+It helps understand who uses the system and what the system depends on, without showing 
+internal details.
+
+3. Defining the Archetypes
+
+After establishing the system context, the next step was to define architectural archetypes, 
+which represent the fundamental roles within the system.
+
+Identified archetypes:
+
+Controller – Manages user requests and coordinates system behavior
+(e.g., ParkingController, LoginController)
+
+Node / Entity – Represents core domain objects
+(e.g., ParkingSlot, Vehicle, Ticket)
+
+Detector – Captures system events or state changes
+(e.g., parking entry/exit logic, sensor input – current or future)
+
+Indicator – Displays system state to users
+(e.g., ParkingDashboard, slot status tables)
+
+Purpose and justification:
+
+Archetypes help identify recurring architectural roles.
+
+They bridge the gap between requirements analysis and component design.
+
+This step ensures the architecture is role-oriented, not just class-oriented.
+
+4. Refinement of the Initial Architecture into Components
+
+In this step, the high-level architecture was refined into concrete software components, 
+mapped directly to the project’s source code.
+
+Major components identified:
+
+UI Components:
+LoginFrame, ParkingDashboard, AdminDashboard
+
+Controller Components:
+ParkingController, LoginController
+
+Service Components:
+ParkingService, PaymentService
+
+Data Access Components:
+UserDao, ParkingDao, PaymentDao, VehicleDao
+
+Infrastructure Components:
+DBConnection, Constants, FileUtil
+
+Database Component:
+MySQL database
+
+Purpose and justification:
+
+This refinement shows how responsibilities are distributed among components.
+
+It improves modularity, maintainability, and scalability.
+
+Each component has a clear responsibility, which aligns with good software engineering 
+practice.
+
+5. System Design Using Architectural Patterns
+
+The final step was to design the system using architectural patterns discussed in class.
+A combination of patterns was applied, as allowed by the task.
+
+Selected patterns and justification:
+
+5.1 Layered Architecture
+
+Organizes the system into Presentation, Controller, Service, and Data Access layers.
+
+Improves separation of concerns and simplifies testing and maintenance.
+
+5.2 MVC (Model–View–Controller)
+
+Clearly separates UI, control logic, and domain data.
+
+Matches the existing project structure and supports future UI changes.
+
+5.3 Client–Server Architecture
+
+The desktop application acts as a client.
+
+MySQL database acts as the server.
+
+Enables centralized data storage and multi-user support.
+
+5.4 Microservice Architecture (Future-Ready Design)
+
+The system is designed so that services such as authentication, parking management, and 
+payment can be separated in the future.
+
+Improves scalability and flexibility for large-scale deployment.
+
+Included as an architectural design consideration, not a full implementation.
+
+Why other patterns were not used:
+
+Pipe & Filter is not suitable because the system is transaction-based, not data-stream based.
+
+Event-Driven Architecture was considered optional and not required for the current scope.
+
+6. Conclusion
+
+This lab task successfully demonstrates a systematic architectural design process:
+
+Starting with system context,
+
+Identifying architectural roles,
+
+Refining into concrete components,
+
+Designing the system using appropriate architectural patterns.
+
+All diagrams and explanations are directly aligned with the project code and follow the 
+concepts taught in class. The design is clear, scalable, and academically sound, making it 
+suitable for both evaluation and future system extension.
